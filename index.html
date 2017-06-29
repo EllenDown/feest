@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>feest</title>
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Crushed|Josefin+Slab|Satisfy" rel="stylesheet">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <title>feest</title>
+</head>
+
+<body id="body" class="hero-image">
+  <header>
+    <nav class="red" id="top-navigation">
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="./index.html"><img src="assests/feest-logo-white.png" width=50%; height=10% alt="Feest App Logo"></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a id="navHome" href="#aboutSection"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="#modal1"><i class="fa fa-spoon" aria-hidden="true"></i> About</a></li>
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <div class="card horizontal">
+                  <div class="card-image">
+                    <img src="assests/IMG9.JPG">
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <h4>What is feest anyway?</h4>
+                      <p>feest was conceived on the belief that food can be just as, if not more, visually exquisite, as it is joyfully delicious. feest offers the opportunity to browse edible bounty simply for the pleasure of looking or to find local restaurants based upon the visual appeal of their cuisine.</p>
+                      <p>It is as easy as pie - and hey - you might just find yourself some pie thanks to your feesting explorations!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <li><a id="navPreferences" href="#formSection"><i class="fa fa-cog" aria-hidden="true"></i> Preferences</a></li>
+            <li><a id="navFeest" href="#photoPage"><i class="fa fa-cutlery" aria-hidden="true"></i> feest</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a id="navHome" href="#aboutSection"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#modal2"><i class="fa fa-spoon" aria-hidden="true"></i> About</a></li>
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <h4>What is feest anyway?</h4>
+                  <p>feest was conceived on the belief that food can be just as, if not more, visually exquisite, as it is joyfully delicious. feest offers the opportunity to browse edible bounty simply for the pleasure of looking or to find local restaurants based upon the visual appeal of their cuisine.</p>
+                  <p>It is as easy as pie - and hey - you might just find yourself some pie thanks to your feesting explorations!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li><a id="navPreferences" href="#formSection"><i class="fa fa-cog" aria-hidden="true"></i> Preferences</a></li>
+        <li><a id="navFeest" href="#photoPage"><i class="fa fa-cutlery" aria-hidden="true"></i> feest</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="row vertical-center parent" id="aboutPage">
+      <div class="container center-align" id="aboutPage">
+        <div class="row">
+          <div class="col s12 m6 logo">
+            <a href="./index.html"><img src="assests/feest-logo.png" width=40%; height=100% alt="Feest App Logo"></a>
+          </div>
+          <div class="col s12 m6">
+            <div class="tagline">
+              <h3>feest your eyes</h3>
+              <p>~ to take great pleasure in looking ~</p>
+            </div>
+            <div class="about-text">
+              <h5 class="title-section"><i class="fa fa-gears" aria-hidden="true"></i> Get Started</h5>
+              <p class="order">1</p>
+              <p>Choose 'Restaurant or 'Browse'</p>
+              <p class="order">2</p>
+              <p>Select your food favorites to see photos that suit your stomach!</p>
+              <p class="order">3</p>
+              <p>If you are looking for restaurants, guided by your input and the photos you like, we will send you local spots for chow! Otherwise just sit back and enjoy the delectable view!</p>
+              <h5 class="title-section"><i class="fa fa-cutlery" aria-hidden="true"></i> Get feesting</h5>
+              <p>Start screen shopping for your next meal!</p>
+            </div>
+            <button id="getStarted" class="btn cyan accent-4" type="submit" name="action">Get Started
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section class="row parent" id="formSection">
+        <div class="container hidden" id="formSection">
+          <div class="row">
+          <!-- <div class="col s12 m4">
+            <a href="./index.html"><img src="assests/feest-logo.png" width=40%; height=100% alt="Feest App Logo"></a>
+          </div> -->
+            <div class="col s12 m12 center-align">
+              <form autocomplete="off" id="foodForm">
+                <div class="returns">
+                  <div class="returns-text">
+                    <h3>Foods to feest On</h3>
+                    <h4>Need a Restaurant Suggestion? Just Browsing?</h4>
+                  </div>
+                <input name="lookingFor" class="with-gap cyan accent-4" type="radio" value="restaurants" id="restaurants" />
+                <label for="restaurants">Restaurants</label>
+
+                <input name="lookingFor" class="with-gap cyan accent-4" type="radio" value="browse" id="browse" />
+                <label for="browse">Browse</label>
+              </div>
+              <br>
+              <div class="queryCategories">
+                <div class="queryCategories-text">
+                  <h4>Your feest fancies?</h4>
+                </div>
+
+                <div class="row">
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="breakfast" type="checkbox" value="breakfast" id="breakfast" />
+                    <label for="breakfast">Breakfast</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="lunch" type="checkbox" value="lunch" id="lunch" />
+                    <label for="lunch">Lunch</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="brunch" type="checkbox" value="brunch" id="brunch" />
+                    <label for="brunch">Brunch</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="dinner" type="checkbox" value="dinner" id="dinner" />
+                    <label for="dinner">Dinner</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="dessert" type="checkbox" value="dessert" id="dessert" />
+                    <label for="dessert">Dessert</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="mexican" type="checkbox" value="mexican" id="mexican" />
+                    <label for="mexican">Mexican</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="chinese" type="checkbox" value="chinese" id="chinese" />
+                    <label for="chinese">Chinese</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="mediterranean" type="checkbox" value="mediterranean" id="mediterranean" />
+                    <label for="mediterranean">Greek</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="american" type="checkbox" value="american" id="american" />
+                    <label for="american">American</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="italian" type="checkbox" value="italian" id="italian" />
+                    <label for="italian">Italian</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="burgers" type="checkbox" value="burgers" id="burgers" />
+                    <label for="burgers">Burgers</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="sandwich" type="checkbox" value="sandwich" id="sandwich" />
+                    <label for="sandwich">Sandwich</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="tacos" type="checkbox" value="tacos" id="tacos" />
+                    <label for="tacos">Tacos</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="thai" type="checkbox" value="thai" id="thai" />
+                    <label for="thai">Thai</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="indian" type="checkbox" value="indian" id="indian" />
+                    <label for="indian">Indian</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="pizza" type="checkbox" value="pizza" id="pizza" />
+                    <label for="pizza">Pizza</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="steak" type="checkbox" value="steak" id="steak" />
+                    <label for="steak">Steak</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="sushi" type="checkbox" value="sushi" id="sushi" />
+                    <label for="sushi">Sushi</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="barbeque" type="checkbox" value="barbeque" id="barbeque" />
+                    <label for="barbeque">Barbeque</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="salad" type="checkbox" value="salad" id="salad" />
+                    <label for="salad">Salad</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="soup" type="checkbox" value="soup" id="soup" />
+                    <label for="soup">Soup</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="vegetarian" type="checkbox" value="vegetarian" id="vegetarian" />
+                    <label for="vegetarian">Vegetarian</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="pasta" type="checkbox" value="pasta" id="pasta" />
+                    <label for="pasta">Pasta</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="seafood" type="checkbox" value="seafood" id="seafood" />
+                    <label for="seafood">Seafood</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="vegan" type="checkbox" value="vegan" id="vegan" />
+                    <label for="vegan">Vegan</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="fruit" type="checkbox" value="fruit" id="fruit" />
+                    <label for="fruit">Fruit</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="chocolate" type="checkbox" value="chocolate" id="chocolate" />
+                    <label for="chocolate">Chocolate</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="ice-cream" type="checkbox" value="ice-cream" id="ice-cream" />
+                    <label for="ice-cream">IceCream</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="cake" type="checkbox" value="cake" id="cake" />
+                    <label for="cake">Cake</label>
+                  </div>
+                  <div class="col s12 m4 l2">
+                    <input class="foodGroup cyan accent-4 filled-in" name="drinks" type="checkbox" value="drinks" id="drinks" />
+                    <label for="drinks">Drinks</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="col s12 center">
+              <div class="submitbutton">
+                <button id="submitPreferences" class="btn cyan accent-4" type="submit" name="action">Start feesting
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="photoPage">
+      <div>
+        <div class="row">
+          <div class="col s2 m2 pass">
+            <a id="pass" class="button"><span>Yuck!</span></a>
+          </div>
+          <div class="col s8 m8 center-align">
+            <div class="img-container">
+              <img id="food-image" class="food-image" src="" alt="" width="750px" height="600px">
+            </div>
+          </div>
+          <div class="col s2 m2 like">
+            <a id="like" class="button"><span>Yum!</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="container center-align hidden">
+        <button id="seeResults" class="btn cyan accent-4" type="submit" name="action">Get Your Suggestions
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+    </section>
+    <section class="parent" id="resultsSection">
+      <div class="row col s6 m6 resultsList">
+      </div>
+      <div class="container">
+      <div class="emptyMessage">
+        <h4>Whoopsie</h4>
+        <p>You chose 'Browse' so we weren't looking for restaurants to suggest to you. If you have changed your mind go back and select 'Restaurants' on the Preferences page.</p>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="page-footer red">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <div class="container">
+            <div class="left">
+              <a href="#" class="brand-logo"><img src="assests/logo-connect.png" height=30% width=80% alt="feest App Logo" class="responsive-img small-img"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5>Hungry for more?</h5>
+          <ul>
+            <li><a href="https://github.com/ellendown"><i class="fa fa-github fa-lg"></i> GitHub</a></li>
+            <li><a href="https://www.instagram.com/actively_spicy/"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+            <li><a href="http://crouton.net/"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+            <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container copyright">
+           © 2017 Copyright Ellen Downing
+      </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script src="https://use.fontawesome.com/fe1d666f3b.js"></script>
+  <script type="text/javascript" src="application.js"></script>
+</body>
+</html>
