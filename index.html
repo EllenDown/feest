@@ -23,8 +23,8 @@
           <a href="./index.html"><img src="assests/feest-logo-white.png" width=50%; height=10% alt="Feest App Logo"></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a id="navHome" href="#aboutSection"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
             <li><a href="#modal1"><i class="fa fa-spoon" aria-hidden="true"></i> About</a></li>
+            <li><a id="navHome" href="#aboutSection"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
             <div id="modal1" class="modal">
               <div class="modal-content">
                 <div class="card horizontal">
@@ -32,9 +32,10 @@
                     <img src="assests/IMG9.JPG">
                   </div>
                   <div class="card-stacked">
-                    <div class="card-content">
+                    <div class="card-content modal-text">
                       <h4>What is feest anyway?</h4>
-                      <p>feest was conceived on the belief that food can be just as, if not more, visually exquisite, as it is joyfully delicious. feest offers the opportunity to browse edible bounty simply for the pleasure of looking or to find local restaurants based upon the visual appeal of their cuisine.</p>
+                      <p>feest was conceived on the belief that food can be just as, if not more, visually exquisite, as it is joyfully delicious. feest offers the opportunity to browse edible bounty simply for the pleasure of looking or to find local restaurants
+                        based upon the visual appeal of their cuisine.</p>
                       <p>It is as easy as pie - and hey - you might just find yourself some pie thanks to your feesting explorations!</p>
                     </div>
                   </div>
@@ -47,15 +48,16 @@
         </div>
       </div>
       <ul class="side-nav" id="mobile-demo">
-        <li><a id="navHome" href="#aboutSection"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
         <li><a href="#modal2"><i class="fa fa-spoon" aria-hidden="true"></i> About</a></li>
+        <li><a id="navHome" href="#aboutSection"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
         <div id="modal2" class="modal">
           <div class="modal-content">
             <div class="card horizontal">
               <div class="card-stacked">
                 <div class="card-content">
                   <h4>What is feest anyway?</h4>
-                  <p>feest was conceived on the belief that food can be just as, if not more, visually exquisite, as it is joyfully delicious. feest offers the opportunity to browse edible bounty simply for the pleasure of looking or to find local restaurants based upon the visual appeal of their cuisine.</p>
+                  <p>feest was conceived on the belief that food can be just as, if not more, visually exquisite, as it is joyfully delicious. feest offers the opportunity to browse edible bounty simply for the pleasure of looking or to find local restaurants
+                    based upon the visual appeal of their cuisine.</p>
                   <p>It is as easy as pie - and hey - you might just find yourself some pie thanks to your feesting explorations!</p>
                 </div>
               </div>
@@ -99,9 +101,6 @@
       <section class="row parent" id="formSection">
         <div class="container hidden" id="formSection">
           <div class="row">
-          <!-- <div class="col s12 m4">
-            <a href="./index.html"><img src="assests/feest-logo.png" width=40%; height=100% alt="Feest App Logo"></a>
-          </div> -->
             <div class="col s12 m12 center-align">
               <form autocomplete="off" id="foodForm">
                 <div class="returns">
@@ -245,13 +244,20 @@
                 </div>
               </div>
             </form>
-            <div class="col s12 center">
-              <div class="submitbutton">
-                <button id="submitPreferences" class="btn cyan accent-4" type="submit" name="action">Start feesting
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </button>
+        <div class="col s12 m6 center">
+          <div class="submitbutton">
+            <button id="reset" class="btn cyan accent-4" type="button" name="action"></i> Reset Preferences
+            </button>
           </div>
         </div>
+        <div class="col s12 m6 center">
+          <div class="submitbutton">
+            <button id="submitPreferences" class="btn cyan accent-4" type="submit" name="action">Start feesting
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
       </div>
       </div>
     </section>
@@ -263,6 +269,9 @@
           </div>
           <div class="col s8 m8 center-align">
             <div class="img-container">
+              <div class="loading load-hide">
+                <img src="http://i.imgur.com/jtkTPvb.gif">
+              </div>
               <img id="food-image" class="food-image" src="" alt="" width="750px" height="600px">
             </div>
           </div>
@@ -271,10 +280,18 @@
           </div>
         </div>
       </div>
-      <div class="container center-align hidden">
+      <div class="row">
+      <div class="col s12 m6 center">
+        <div class="change">
+          <button id="changePreferences" class="btn cyan accent-4" type="button" name="action"><i class="fa fa-chevron-left" aria-hidden="true"></i> Change Preferences
+          </button>
+        </div>
+      </div>
+      <div class="col s12 m6 center">
         <button id="seeResults" class="btn cyan accent-4" type="submit" name="action">Get Your Suggestions
           <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </div>
+    </div>
+    </div>
     </section>
     <section class="parent" id="resultsSection">
       <div class="row col s6 m6 resultsList">
@@ -284,6 +301,10 @@
         <h4>Whoopsie</h4>
         <p>You chose 'Browse' so we weren't looking for restaurants to suggest to you. If you have changed your mind go back and select 'Restaurants' on the Preferences page.</p>
       </div>
+      </div>
+      <div class="col s12 m6 center">
+        <button id="backToFeest" class="btn cyan accent-4 backFeest" type="submit" name="action"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Feesting
+        </button>
       </div>
     </section>
   </main>

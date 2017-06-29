@@ -1,5 +1,6 @@
 $(document).ready(function() {
   hideShowNavigation(false);
+  // setIndexPageLoading(false);
   $('section#resultsSection').hide();
   $('section#photoPage').hide();
   $('section#formSection').hide();
@@ -25,6 +26,16 @@ function hideShowNavigation(pageLanded) {
   }
 }
 
+function setIndexPageLoading(isLoading) {
+  if (isLoading) {
+    $(".loading").show();
+    $("#food-image").hide();
+  } else {
+    $(".loading").hide();
+    $("#food-image").show();
+  }
+}
+
 $('#getStarted').on('click', function(event) {
   event.preventDefault();
   hideShowNavigation(true);
@@ -45,6 +56,18 @@ function showForm(event) {
   $('section#formSection').fadeIn(1000);
 };
 
+function getFeesting(event) {
+  event.preventDefault();
+  $('.loading').removeClass('load-hide')
+  $('section#aboutPage').hide();
+  $('section#formSection').hide();
+  $('section#resultsSection').hide();
+  $('body').removeClass('hero-image');
+  $('section#photoPage').fadeIn(2000);
+  $('footer#footer').fadeIn(2000);
+};
+
+
 $('#navHome').click(function() {
   event.preventDefault()
   hideShowNavigation(false);
@@ -59,30 +82,46 @@ $('#navHome').click(function() {
 
 $('#getPreferences').click(showForm)
 $('#navPreferences').click(showForm)
-$('#navPreferences').click(function() {
+$('#navPreferences').click(function(event){
+  $('#foodForm')[0].reset();
+})
+$('#changePreferences').click(showForm)
+$('#navPreferences').click(function(event) {
+  event.preventDefault();
   $('body').removeClass('hero-image2')
   $('body').addClass('hero-image')
+  $('#foodForm').reset();
+})
+
+$('#changePreferences').click(function(event) {
+  event.preventDefault();
+  $('body').removeClass('hero-image2')
+  $('body').addClass('hero-image')
+  $('#foodForm')[0].reset();
+})
+
+$('#reset').click(function(event){
+  event.preventDefault();
+  $('#foodForm')[0].reset();
 })
 
 $('#submitPreferences').click(getFeesting)
 $('#navFeest').click(getFeesting)
-$('#navFeest').click(function() {
+$('#backToFeest').click(getFeesting)
+$('#navFeest').click(function(event) {
+  event.preventDefault()
+  $('body').removeClass('hero-image')
+  $('.loading').removeClass('load-hide')
+  $('body').removeClass('hero-image2')
+})
+
+$('#backToFeest').click(function(event) {
+  event.preventDefault()
   $('body').removeClass('hero-image')
   $('body').removeClass('hero-image2')
 })
 
-function getFeesting(event) {
-  event.preventDefault();
-  $('section#aboutPage').hide();
-  $('section#formSection').hide();
-  $('section#resultsSection').hide();
-  $('body').removeClass('hero-image');
-  $('section#photoPage').fadeIn(2000);
-  $('footer#footer').fadeIn(2000);
-};
-
 $('button#seeResults').on('click', function(event) {
-  $('.parallax').parallax();
   $('section#aboutPage').hide();
   $('section#formSection').hide();
   $('section#resultsSection').hide();
@@ -91,6 +130,14 @@ $('button#seeResults').on('click', function(event) {
   $('section#photoPage').hide();
   $('section#resultsSection').fadeIn(1000);
   $('footer#footer').fadeIn(2000);
+})
+
+$('#like').click(function(event) {
+  $('.loading').removeClass('load-hide')
+})
+
+$('#pass').click(function(event) {
+  $('.loading').removeClass('load-hide')
 })
 
 var baseUnsplashUrl = "https://api.unsplash.com/search/photos?client_id=62e3d91fc8fcb724fb9edfd9521f294e316ff7bce473d2dec7c6439506d05b77&per_page=50&query="
@@ -125,23 +172,23 @@ $('#pass').click(function(event) {
   } else if ($('.returns input[name="lookingFor"]:checked').val() === 'browse') {
     justBrowse()
   }
-})
+});
 
 $('#seeResults').click(function(event){
   event.preventDefault();
   if ($('.returns input[name="lookingFor"]:checked').val() === 'restaurants') {
-    $('.emptyMessage').hide()
+    $('.emptyMessage').hide();
   } else if ($('.returns input[name="lookingFor"]:checked').val() === 'browse') {
-    $('.emptyMessage').fadeIn(1000)
+    $('.emptyMessage').fadeIn(1000);
   }
-})
+});
 
 function getPhoto() {
   // event.preventDefault();
   var $preferences = [];
   $('.queryCategories input[type="checkbox"]:checked').each(function() {
     $preferences.push($(this).val());
-  })
+  });
   var randomQuery = $preferences[Math.floor(Math.random() * $preferences.length)];
 
   $.ajax({
@@ -167,7 +214,7 @@ function getPhoto() {
       }
       var num = Math.floor(Math.random() * $photoUrls.length);
       var randomPhoto = $photoUrls[num];
-      localStorage.setItem('randomPhoto', $photoUrls[num])
+      localStorage.setItem('randomPhoto', $photoUrls[num]);
       localStorage.setItem('randomRestaurantName', $restaurantName[num]);
       localStorage.setItem('randomRestaurantUrl', $restaurantUrl[num]);
       $("#food-image").attr("src", randomPhoto).fadeIn(1000);
@@ -176,6 +223,8 @@ function getPhoto() {
     beforeSend: function(xhr) {
       xhr.setRequestHeader("X-Zomato-API-Key", "f3effe238b6248953e1ab5ef7ea12c7f");
     }
+  }) .then(function() {
+    $('.loading').addClass('load-hide')
   })
 }
 // local storage browser can store info
