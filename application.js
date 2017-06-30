@@ -26,15 +26,15 @@ function hideShowNavigation(pageLanded) {
   }
 }
 
-function setIndexPageLoading(isLoading) {
-  if (isLoading) {
-    $(".loading").show();
-    $("#food-image").hide();
-  } else {
-    $(".loading").hide();
-    $("#food-image").show();
-  }
-}
+// function setIndexPageLoading(isLoading) {
+//   if (isLoading) {
+//     $(".loading").show();
+//     $("#food-image").hide();
+//   } else {
+//     $(".loading").hide();
+//     $("#food-image").show();
+//   }
+// }
 
 $('#getStarted').on('click', function(event) {
   event.preventDefault();
@@ -58,7 +58,8 @@ function showForm(event) {
 
 function getFeesting(event) {
   event.preventDefault();
-  $('.loading').removeClass('load-hide')
+  // $('.loading').removeClass('load-hide')
+  // $('.loading').removeClass('food-image')
   $('section#aboutPage').hide();
   $('section#formSection').hide();
   $('section#resultsSection').hide();
@@ -132,13 +133,6 @@ $('button#seeResults').on('click', function(event) {
   $('footer#footer').fadeIn(2000);
 })
 
-$('#like').click(function(event) {
-  $('.loading').removeClass('load-hide')
-})
-
-$('#pass').click(function(event) {
-  $('.loading').removeClass('load-hide')
-})
 
 var baseUnsplashUrl = "https://api.unsplash.com/search/photos?client_id=62e3d91fc8fcb724fb9edfd9521f294e316ff7bce473d2dec7c6439506d05b77&per_page=50&query="
 
@@ -210,7 +204,7 @@ function getPhoto() {
           $photoUrls.splice([j], 1)
           $restaurantName.splice([j], 1)
           $restaurantUrl.splice([j], 1)
-        }
+        } console.log($photoUrls)
       }
       var num = Math.floor(Math.random() * $photoUrls.length);
       var randomPhoto = $photoUrls[num];
@@ -223,9 +217,10 @@ function getPhoto() {
     beforeSend: function(xhr) {
       xhr.setRequestHeader("X-Zomato-API-Key", "f3effe238b6248953e1ab5ef7ea12c7f");
     }
-  }) .then(function() {
-    $('.loading').addClass('load-hide')
   })
+  // .then(function() {
+  //   $('.loading').addClass('load-hide')
+  // })
 }
 // local storage browser can store info
 // localStorage.setItem('variable', 'value')
