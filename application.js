@@ -1,6 +1,5 @@
 $(document).ready(function() {
   hideShowNavigation(false);
-  // setIndexPageLoading(false);
   $('section#resultsSection').hide();
   $('section#photoPage').hide();
   $('section#formSection').hide();
@@ -26,16 +25,6 @@ function hideShowNavigation(pageLanded) {
   }
 }
 
-// function setIndexPageLoading(isLoading) {
-//   if (isLoading) {
-//     $(".loading").show();
-//     $("#food-image").hide();
-//   } else {
-//     $(".loading").hide();
-//     $("#food-image").show();
-//   }
-// }
-
 $('#getStarted').on('click', function(event) {
   event.preventDefault();
   hideShowNavigation(true);
@@ -58,8 +47,6 @@ function showForm(event) {
 
 function getFeesting(event) {
   event.preventDefault();
-  // $('.loading').removeClass('load-hide')
-  // $('.loading').removeClass('food-image')
   $('section#aboutPage').hide();
   $('section#formSection').hide();
   $('section#resultsSection').hide();
@@ -91,7 +78,7 @@ $('#navPreferences').click(function(event) {
   event.preventDefault();
   $('body').removeClass('hero-image2')
   $('body').addClass('hero-image')
-  $('#foodForm').reset();
+  $('#foodForm')[0].reset();
 })
 
 $('#changePreferences').click(function(event) {
@@ -199,12 +186,12 @@ function getPhoto() {
         $restaurantName.push(data.restaurants[i].restaurant.name);
         $restaurantUrl.push(data.restaurants[i].restaurant.url);
       }
-      for (var j = 0; j < $photoUrls.length; j++) {
-        if ($photoUrls[j] === '') {
-          $photoUrls.splice([j], 1)
-          $restaurantName.splice([j], 1)
-          $restaurantUrl.splice([j], 1)
-        } console.log($photoUrls)
+      for (var j = $photoUrls.length-1; j >= 0; j--) {
+        if ($photoUrls[j] === "") {
+          $photoUrls.splice(j, 1);
+          $restaurantName.splice(j, 1);
+          $restaurantUrl.splice(j, 1);
+        }
       }
       var num = Math.floor(Math.random() * $photoUrls.length);
       var randomPhoto = $photoUrls[num];
@@ -218,13 +205,8 @@ function getPhoto() {
       xhr.setRequestHeader("X-Zomato-API-Key", "f3effe238b6248953e1ab5ef7ea12c7f");
     }
   })
-  // .then(function() {
-  //   $('.loading').addClass('load-hide')
-  // })
+
 }
-// local storage browser can store info
-// localStorage.setItem('variable', 'value')
-// localStorage.getItem('variable')
 function getResults() {
   $('.resultsList').append(
     '<div class="col s12 m6 l4">' +
@@ -259,8 +241,3 @@ function justBrowse() {
       $("#food-image").attr("src", newRandomPhoto).fadeIn(1000);
     })
 }
-
-
-
-
-//  $('#food-image').animate({left:800}, {duration: 'slow', easing: 'easeOutQuad'});
